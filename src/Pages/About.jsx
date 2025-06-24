@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 const About = () => {
     const [products, setProduct] = useState([])
     async function showApi() {
-        await axios.get('https://68527fd90594059b23cdce90.mockapi.io/api/products')
+        await axios.get(`${import.meta.env.VITE_API_URL}/products`)
             .then((res) => {
                 setProduct(res.data)
             })
